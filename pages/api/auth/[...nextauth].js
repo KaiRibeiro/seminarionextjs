@@ -26,11 +26,10 @@ export default NextAuth({
       }
       return token;
     },
-    redirect: async (url, _baseUrl) => {
-      if(url === '/profile') {
-        return Promise.resolve('/');
-      }
-      return Promise.resolve('/');
+    redirect: async (url, baseUrl) => {
+      if (url.startsWith(baseUrl)) return url
+      else if (url.startsWith("/")) return new URL(url, baseUrl).toString()
+      return baseUrl
     }
   }
 });

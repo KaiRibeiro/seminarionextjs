@@ -42,7 +42,9 @@ export default function Home() {
 
       {!session && (
         <>
-          <Button onClick={() => signIn()}>Entrar</Button>
+          <Button onClick={() => signIn("google", { callbackUrl: '/home' })}>
+            Entrar
+          </Button>
         </>
       )}
 
