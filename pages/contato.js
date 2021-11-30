@@ -4,16 +4,15 @@ import {
   Box,
   Heading,
   Image,
+  Text,
   SimpleGrid,
-  Divider,
 } from '@chakra-ui/react';
 import Layout from './components/layouts/article';
-import { GridItem } from './components/grid-item';
-import Section from './components/section';
-import kaique from '../public/images/kaique.jpg';
-import lucas from '../public/images/lucas.jpg';
-import tiago from '../public/images/thiago.png';
-import useSWR from 'swr';
+import { GridItem } from "./components/grid-item";
+import Section from "./components/section";
+import kaique from "../public/images/kaique.jpg";
+import lucas from "../public/images/lucas.jpg";
+import tiago from "../public/images/thiago.png";
 import { useEffect, useState } from 'react';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -34,23 +33,14 @@ export default function Membros({ children, user }) {
           Contato
         </Heading>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+        <SimpleGrid color="white" columns={[1, 1, 2]} gap={6}>
           {users.map((u, index) => (
-            <div
-              style={{
-                color: 'white',
-                alignItems: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                margin: '10% 0',
-                flex: '1 0 40%',
-              }}
-            >
-              <h2>{u.name}</h2>
-              <h2>{u.email}</h2>
-            </div>
+            <Section delay={0.1}>
+              <Heading as="h2" fontSize={20}>{u.name}</Heading>
+              <Text fontSize={15}>{u.email}</Text>
+          </Section>
           ))}
-        </div>
+        </SimpleGrid>
       </Container>
     </Layout>
   );

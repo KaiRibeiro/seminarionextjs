@@ -12,6 +12,7 @@ import { GridItem } from "./components/grid-item";
 import Section from "./components/section";
 import kaique from "../public/images/kaique.jpg";
 import lucas from "../public/images/lucas.jpg";
+import bruno from "../public/images/bruno.jpg";
 import tiago from "../public/images/thiago.png";
 
 export default function Membros({ children, user }) {
@@ -22,7 +23,7 @@ export default function Membros({ children, user }) {
           Membros
         </Heading>
 
-        <SimpleGrid columns={[1, 1, 3]} gap={6}>
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section delay={0.1}>
             <GridItem
               href="https://www.linkedin.com/in/kaiquecampos/"
@@ -42,6 +43,13 @@ export default function Membros({ children, user }) {
               href="https://github.com/TiagoSaggioro/"
               title="Tiago Saggioro"
               thumbnail={tiago}
+            />
+          </Section>
+          <Section delay={0.4}>
+            <GridItem
+              href="https://github.com/bmendes922/"
+              title="Bruno Mendes"
+              thumbnail={bruno}
             />
           </Section>
         </SimpleGrid>
