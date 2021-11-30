@@ -10,6 +10,8 @@ import {
 import Layout from "./components/layouts/article";
 import { GridItem } from "./components/grid-item";
 import { useEffect, useState } from "react";
+import Paragraph from "./components/paragraph";
+
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -36,7 +38,7 @@ export default function Membros({ children, user }) {
                 {u.name}
               </Heading>
               <Divider orientation="horizontal" />
-              <Box>{u.description}</Box>
+              <Paragraph>{u.description}</Paragraph>
             </Box>
           ))}
         </SimpleGrid>
