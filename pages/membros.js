@@ -12,7 +12,7 @@ import { GridItem } from "./components/grid-item";
 import Section from "./components/section";
 import kaique from "../public/images/kaique.jpg";
 import lucas from "../public/images/lucas.jpg";
-import thiago from "../public/images/thiago.png";
+import tiago from "../public/images/thiago.png";
 
 export default function Membros({ children, user }) {
   return (
@@ -40,8 +40,8 @@ export default function Membros({ children, user }) {
           <Section delay={0.3}>
             <GridItem
               href="https://github.com/TiagoSaggioro/"
-              title="Thiago Saggioro"
-              thumbnail={thiago}
+              title="Tiago Saggioro"
+              thumbnail={tiago}
             />
           </Section>
         </SimpleGrid>
